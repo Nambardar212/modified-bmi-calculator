@@ -44,9 +44,10 @@ function App() {
     });
     setState(newState);
     setFlag(true)
-    setTimeout(() => {
+    let timer = setTimeout(() => {
       setFlag(false)
     },10000)
+   return ()=> clearTimeout(timer);
   }
    
   const handleUndo = () => {
