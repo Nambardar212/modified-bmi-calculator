@@ -13,17 +13,23 @@ const BmiForm = ({handleBmiForm}) => {
    const date = new Date().toLocaleDateString().split(',')[0];
 
    const handleWeight = (e) => {
-       const newState = {...state}
-       newState.weight = e.target.value
-       newState.date = date
-       setState(newState)
+       let val = e.target.value
+       if(val >= 0) {
+          const newState = {...state}
+          newState.weight = val
+          newState.date = date
+          setState(newState)
+       }
    }
 
    const handleHeight = (e) => {
-       const newState = {...state}
-       newState.height = e.target.value
-       newState.date = date
-       setState(newState)
+       let val = e.target.value
+       if(val >= 0) {
+          const newState = {...state}
+          newState.height = val
+          newState.date = date
+          setState(newState)
+       }    
    }
 
    const handleSubmit = () => {
